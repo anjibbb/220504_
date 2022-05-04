@@ -1,0 +1,285 @@
+@charset "utf-8";
+
+* {margin: 0; padding: 0;}
+li {list-style: none;}
+a {text-decoration: none; color: #333;}
+body {color: #333;}
+
+/* 모바일 */
+.mobile {display: none;}
+.mobile_menu {display: none;}
+
+/* header */
+header {
+    width: 100%;
+    height: 100px;
+    background-color: rgba(0, 0, 0, 0.315);
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 9;
+}
+
+
+
+header div {
+    display: flex;
+    max-width: 1440px;
+    width: 95%;
+    height: 100%;
+    margin: 0 auto;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header div h1 {
+    line-height: 0;
+}
+/* 로고 위치 중간 위치 */
+
+
+header div a img {
+    width: 200px;
+}
+
+header .pc_menu ul {
+    display: flex;
+
+}
+
+header .pc_menu ul li a {
+    padding: 0 20px;
+    color: #fff;
+}
+
+
+/* .main_visual */
+
+.main_visual {
+    height: 100vh;
+    position: relative;
+}
+
+.main_visual img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.main_visual div {
+    max-width: 1440px;
+    width: 95%;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+
+    color: rgb(219, 112, 112);
+    mix-blend-mode: soft-light;
+}
+
+
+.main_visual div h2 {
+    font-size: 50px;
+    margin-bottom: 20px;
+    color: rgb(255, 255, 255);
+}
+
+.main_visual div p {
+    font-size: 20px;
+    font-weight: bold;
+    font-style: italic;
+    color: #fff;
+}
+
+/* .cont_01 */
+
+.cont_01 {
+    padding: 150px 0;
+}
+
+.cont_01 .title {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.cont_01 .title h3 {
+    font-size: 40px;
+}
+
+.cont_01 .list {
+    max-width: 1440px;
+    width: 95%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    /* 밑으로 나열 시킬 때 */
+}
+
+.cont_01 .list div {
+    width: 24%;
+    height: 420px;
+    background-color: rgb(195, 206, 255);
+    overflow: hidden;
+    /* 영역을 벗어나는 부분 숨김 처리*/
+    border-radius: 20px;
+}
+
+
+.cont_01 .list div img {
+    width: 100%;
+    height: 50%;
+    object-fit: cover;
+    transform: scale(3);
+    background-color: rgb(244, 221, 255);
+    mix-blend-mode: multiply;
+    transition: 1s;
+    height: 300px;
+    
+}
+
+
+.cont_01 .list div a {
+    display: block;
+    width: 100%;
+    height: 50%;
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-end;
+    /* flex로 문구 밑으로 떨어트리기 */
+
+    height: auto;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+
+
+.cont_01 .list div a h4 {
+    width: 100%;
+    font-size: 22px;
+    margin-bottom: 10px;
+    position: relative;
+    z-index: 9;
+    color: #fff;
+
+}
+
+.cont_01 .list div a p {
+    display: none;
+}
+
+
+.cont_01 .list div:hover img{
+    transform: scale(1);
+    mix-blend-mode: normal;
+}
+
+.cont_01 .list div:hover p {
+    display: block;
+}
+
+.cont_01 .list div:hover h4 {
+    color: #333;
+}
+
+/* footer */
+
+footer {
+    padding: 50px 0;
+    background-color: #333;
+    color: rgba(255, 255, 255, 0.473);
+    text-align: center;
+    font-size: 11px;
+}
+
+/* 중단점 1024 이하 */
+@media screen and (max-width:1024px) {
+    .pc_menu { display: none; }
+    .mobile {
+        display: block;
+         font-size: 35px;
+        color: #fff;}
+    .mobile span {
+        position: absolute;
+        left: -99999999px;
+    }
+
+    /* .cont_01 */
+
+    .cont_01 {
+        background-color: rgb(240, 242, 255);
+    }
+
+    .cont_01 .list div {
+        width: 48%;
+        height: auto;
+        /* 기존에 있는 420px의 고정값을 자식이 가지는 영역만큼 자유롭게 지닐수 있도록 설정 */
+        margin-bottom: 40px;
+        background-color: #fff;
+        
+    }
+
+    .cont_01 .list div img {
+        transform: scale(1);
+ 
+    }
+
+    .cont_01 .list div a h4 {
+        color: #333;
+    }
+
+    .cont_01 .list div a p {
+        display: block;
+        margin-bottom: 10px;
+    }
+}
+
+/* 640px 이하 */
+
+@media screen and (max-width:640px) {
+    /* .main_visual */
+
+    .main_visual div h2 {
+        font-size: 32px;
+    } 
+
+    .main_visual div p {
+        font-size: 16px;
+    }
+
+    /* .cont_01 */
+
+
+    .cont_01 {
+        padding: 80px 0;
+    }
+    .cont_01 .list div {
+        width: 100%;
+    }
+}
+
+/* aside */
+ aside {
+    position: fixed;
+    bottom: 70px;
+    right: 50px;
+ }
+ 
+ aside ul li {
+     width: 60px;
+     height: 60px;
+     text-align: center;
+     line-height: 60px;
+     background-color: rgb(255, 255, 255);
+     margin-top: 10px;
+     border-radius: 50%;
+     box-shadow: 2px 3px 10px rgba(58, 58, 58, 0.384);
+ }
+
+ aside ul li a {
+     color: #333;
+     display: block;
+ }
